@@ -3,7 +3,7 @@ import processTailwindFeatures from './processTailwindFeatures'
 import { env } from './lib/sharedState'
 import { findAtConfigPath } from './lib/findAtConfigPath'
 
-module.exports = function tailwindcss(configOrPath) {
+export default function tailwindcss(configOrPath) {
   return {
     postcssPlugin: 'tailwindcss',
     plugins: [
@@ -44,4 +44,4 @@ module.exports = function tailwindcss(configOrPath) {
   }
 }
 
-module.exports.postcss = true
+tailwindcss.postcss = true

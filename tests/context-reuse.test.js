@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const postcss = require('postcss')
-const tailwind = require('../src/index.js')
+const tailwind = require('../src/index.js').default
 const sharedState = require('../src/lib/sharedState.js')
 const configPath = path.resolve(__dirname, './context-reuse.tailwind.config.js')
 const { css } = require('./util/run.js')
