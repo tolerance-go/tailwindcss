@@ -30,7 +30,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.mjs'],
     fallback: {
       fs: require.resolve('memfs'),
       assert: require.resolve('assert'),
@@ -63,7 +63,7 @@ module.exports = {
     // fix "process is not defined" error:
     // (do "npm install process" before running the build)
     new webpack.ProvidePlugin({
-      process: path.resolve(path.join(__dirname, './process-browser')),
+      process: path.resolve(path.join(__dirname, './process-browser.js')),
     }),
   ],
 }
