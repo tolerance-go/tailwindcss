@@ -7,7 +7,7 @@ vol.fromJSON({
   '/css/preflight.css': '',
 })
 
-const convertHTMLToTailwindcss = (html, input, config) => {
+export const convertHTMLToTailwindcss = (html, input, config) => {
   return postcss(
     tailwindcss({
       ...config,
@@ -31,4 +31,3 @@ export const handleVol = (callback) => {
   callback(vol)
 }
 
-export default convertHTMLToTailwindcss

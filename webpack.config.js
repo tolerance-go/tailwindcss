@@ -11,6 +11,7 @@ module.exports = {
       name: 'tailwindcss',
       type: 'commonjs',
     },
+    clean: true,
   },
   module: {
     rules: [
