@@ -1,4 +1,4 @@
-import tailwindcss from './index'
+import tailwindcss from './base'
 import postcss from 'postcss'
 
 import { vol } from 'memfs'
