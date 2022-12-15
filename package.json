@@ -13,6 +13,7 @@
     "tailwindcss": "lib/cli.js"
   },
   "scripts": {
+    "clean": "rimraf .turbo dist lib peers node_modules src/corePluginList.js",
     "build:browser": "webpack",
     "build:cjs": "swc src --out-dir lib --copy-files",
     "prebuild": "npm run generate && rimraf lib",

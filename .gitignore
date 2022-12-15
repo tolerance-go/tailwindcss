@@ -22,3 +22,5 @@ isolate*.log
 /tests/evaluate-tailwind-functions.test.html
 
 /dist
+
+/.turbo
