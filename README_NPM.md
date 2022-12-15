@@ -43,8 +43,9 @@
           - es5
           - DOM3
         - module
-          - cjs
+          - iife
         - types
+          - browser-global.d.ts
 
     - node
 
