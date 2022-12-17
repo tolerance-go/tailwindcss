@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const { ESBuildMinifyPlugin } = require('esbuild-loader')
 
 module.exports = {
   mode: 'production',
@@ -19,11 +20,16 @@ module.exports = {
         test: /\.m?js$/,
         // exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          // loader: 'babel-loader',
+          // options: {
+          //   presets: ['@babel/preset-env'],
+          //   // plugins: ['@babel/plugin-transform-runtime'],
+          //   // sourceType: 'unambiguous',
+          // },
+          loader: 'esbuild-loader',
           options: {
-            presets: ['@babel/preset-env'],
-            // plugins: ['@babel/plugin-transform-runtime'],
-            // sourceType: 'unambiguous',
+            // loader: 'jsx', // Remove this if you're not using JSX
+            target: 'es2020', // Syntax to compile to (see options below for possible values)
           },
         },
       },
@@ -66,4 +72,11 @@ module.exports = {
       process: path.resolve(path.join(__dirname, './process-browser.js')),
     }),
   ],
+  optimization: {
+    minimizer: [
+      new ESBuildMinifyPlugin({
+        target: 'es2020', // Syntax to compile to (see options below for possible values)
+      }),
+    ],
+  },
 }

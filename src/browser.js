@@ -1,11 +1,12 @@
 import tailwindcss from './base'
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
+import { getPreflightCssContent } from './browser-getPreflightCssContent'
 
 import { vol } from 'memfs'
 
 vol.fromJSON({
-  '/css/preflight.css': '',
+  '/css/preflight.css': getPreflightCssContent(),
 })
 
 export const convertHTMLToTailwindcss = (html, input, config) => {
