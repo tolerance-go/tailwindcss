@@ -3,7 +3,7 @@ import path from 'path'
 import invariant from 'tiny-invariant'
 
 const filePath = path.join(__dirname, '../src/browser-getPreflightCssContent.js')
-const cssPath = path.join(__dirname, '../lib/css/preflight.css')
+const cssPath = path.join(__dirname, '../src/css/preflight.css')
 
 invariant(fs.existsSync(cssPath), `${cssPath} not find.`)
 
